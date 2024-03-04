@@ -8,3 +8,27 @@
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
 */
+
+.submenu-image-holder{
+	height:116px;
+}
+.submenu-image{
+	height:100%;
+	object-fit: cover;
+}
+
+.mega-menu-links{
+	margin-top:15px;
+	padding-top:15px;
+	border-top:1px solid rgba(23,24,33,0.5);;
+	text-align: center;
+}
+
+.mega-menu-links a{
+	color:rgba(23,24,33,1);
+	padding:0 3px;
+}
+
+.mega-menu-links a:hover{
+	color:#2D95E3;
+}
