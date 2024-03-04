@@ -38,7 +38,7 @@
 		<meta name="image" property='og:image' content='<?= get_the_post_thumbnail_url() ?>' />
 	<?php endif; ?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152943891-1"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152943891-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -49,7 +49,7 @@
 
 		gtag('config', 'UA-152943891-1');
 	</script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663501575241425" crossorigin="anonymous"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663501575241425" crossorigin="anonymous"></script> -->
 
 	<?php wp_head(); ?>
 </head>
@@ -218,7 +218,7 @@
 
 						<!-- Logo -->
 						<a href="index.html" class="logo">
-							<img class="logo__img" src="<?= get_template_directory_uri() ?>/img/logo_default.png" srcset="<?= get_template_directory_uri() ?>/img/logo_default.png 1x, img/logo_default@2x.png 2x" alt="logo">
+							<img class="logo__img" src="<?= get_template_directory_uri() ?>/img/logo_default.png" alt="logo">
 						</a>
 
 						<!-- Nav-wrap -->
