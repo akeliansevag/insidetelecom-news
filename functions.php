@@ -1283,8 +1283,8 @@ class AWP_Menu_Walker_Mobile extends Walker_Nav_Menu
     {
 
         if ($args->walker->has_children) {
-            $output .= "<div class='collapse' id='" . $this->iid . "'>";
-            $output .= "<ul class='sub-menu'>";
+
+            $output .= "<ul class='sidenav__menu-dropdown'>";
         } else {
             $output .= "<ul>";
         }
@@ -1292,31 +1292,23 @@ class AWP_Menu_Walker_Mobile extends Walker_Nav_Menu
 
     function end_lvl(&$output, $depth = 0, $args = null)
     {
-        if ($args->walker->has_children) {
-            $output .= "</ul>";
-            $output .= "</div>";
-        } else {
-            $output .= "</ul>";
-        }
+        $output .= "</ul>";
     }
 
     function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     {
-        if ($args->walker->has_children) {
-            $output .= "<li class='has-sub'>";
-        } else {
-            $output .= "<li>";
-        }
+
+        $output .= "<li>";
+
 
         if ($args->walker->has_children && $depth == 0) {
-            $this->iid = "cm-" . $item->ID;
 
-            $output .= '<div><a href="' . $item->url . '">';
+            $output .= '<a class="sidenav__menu-url" href="' . $item->url . '">';
             $output .= $item->title;
             $output .= "</a>";
-            $output .= '<a data-bs-toggle="collapse" href="#' . $this->iid . '"><i class="fa fa-plus"></i></a></div>';
+            $output .= '<button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>';
         } else {
-            $output .= '<a href="' . $item->url . '">';
+            $output .= '<a class="sidenav__menu-url" href="' . $item->url . '">';
             $output .= $item->title;
             $output .= "</a>";
         }
