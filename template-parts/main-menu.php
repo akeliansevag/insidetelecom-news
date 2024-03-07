@@ -19,7 +19,7 @@ $menuitems = wp_get_nav_menu_items($menu_name);
                 </button>
 
                 <!-- Logo -->
-                <a href="index.html" class="logo">
+                <a href="<?= home_url() ?>" class="logo">
                     <img class="logo__img" src="<?= get_template_directory_uri() ?>/img/logo_default.png" alt="logo">
                 </a>
 
