@@ -40,3 +40,18 @@
 .social-whatsapp:hover{
 	background-color: #1EA951;
 }
+
+.it-cover{
+	height:100%;
+	object-fit: cover;
+	min-height: auto;
+}
+
+.two-lines{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
