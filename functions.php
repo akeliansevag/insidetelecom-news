@@ -940,11 +940,12 @@ function html5blank_header_scripts()
 
 function print_title($post)
 {
-    if (get_field("editors_choice", $post->ID)) {
-        return "<span class='editors-choice'>Editor's Choice</span>" . $post->post_title;
-    } else {
-        return $post->post_title;
-    }
+    return $post->post_title;
+    // if (get_field("editors_choice", $post->ID)) {
+    //     return "<span class='editors-choice'>Editor's Choice</span>" . $post->post_title;
+    // } else {
+    //     return $post->post_title;
+    // }
 }
 
 // Load HTML5 Blank conditional scripts
