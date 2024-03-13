@@ -1,9 +1,9 @@
-(function($){
+(function ($) {
   "use strict";
 
   var $window = $(window);
 
-  $window.on('load', function() {
+  $window.on('load', function () {
     $window.trigger("resize");
   });
 
@@ -14,13 +14,13 @@
 
   // Init
   initOwlCarousel();
-  setTimeout(function() {
+  setTimeout(function () {
     initFlickity();
   }, 1000);
-  
-  
 
-  $window.on('resize', function() {
+
+
+  $window.on('resize', function () {
     hideSidenav();
     megaMenu();
   });
@@ -46,8 +46,8 @@
   /* Mobile Detect
   -------------------------------------------------------*/
   if (/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent || navigator.vendor || window.opera)) {
-     $("html").addClass("mobile");
-     $('.dropdown-toggle').attr('data-toggle', 'dropdown');
+    $("html").addClass("mobile");
+    $('.dropdown-toggle').attr('data-toggle', 'dropdown');
   }
   else {
     $("html").removeClass("mobile");
@@ -55,12 +55,12 @@
 
   /* IE Detect
   -------------------------------------------------------*/
-  if(Function('/*@cc_on return document.documentMode===10@*/')()){ $("html").addClass("ie"); }
+  if (Function('/*@cc_on return document.documentMode===10@*/')()) { $("html").addClass("ie"); }
 
 
   /* Sticky Navigation
   -------------------------------------------------------*/
-  $window.scroll(function(){
+  $window.scroll(function () {
 
     scrollToTop();
     var $stickyNav = $('.nav--sticky');
@@ -82,25 +82,25 @@
     } else {
       $stickyNav.removeClass('scrolling');
     }
-    
+
   });
 
 
   /* Mobile Navigation
   -------------------------------------------------------*/
   var $sidenav = $('#sidenav'),
-      $mainContainer = $('#main-container'),
-      $navIconToggle = $('.nav-icon-toggle'),
-      $navHolder = $('.nav__holder'),
-      $contentOverlay = $('.content-overlay'),
-      $htmlContainer = $('html'),
-      $sidenavCloseButton = $('#sidenav__close-button');
+    $mainContainer = $('#main-container'),
+    $navIconToggle = $('.nav-icon-toggle'),
+    $navHolder = $('.nav__holder'),
+    $contentOverlay = $('.content-overlay'),
+    $htmlContainer = $('html'),
+    $sidenavCloseButton = $('#sidenav__close-button');
 
 
-  $navIconToggle.on('click', function(e) {
+  $navIconToggle.on('click', function (e) {
     e.stopPropagation();
     $(this).toggleClass('nav-icon-toggle--is-open');
-    $sidenav.toggleClass('sidenav--is-open');   
+    $sidenav.toggleClass('sidenav--is-open');
     $contentOverlay.toggleClass('content-overlay--is-visible');
   });
 
@@ -111,37 +111,37 @@
   }
 
   function hideSidenav() {
-    if( minWidth(992) ) {
+    if (minWidth(992)) {
       resetNav();
-      setTimeout( megaMenu, 500 );
+      setTimeout(megaMenu, 500);
     }
   }
 
-  $contentOverlay.on('click', function() {
+  $contentOverlay.on('click', function () {
     resetNav();
   });
 
-  $sidenavCloseButton.on('click', function() {
+  $sidenavCloseButton.on('click', function () {
     resetNav();
   });
-  
+
 
   var $dropdownTrigger = $('.nav__dropdown-trigger'),
-      $navDropdownMenu = $('.nav__dropdown-menu'),
-      $navDropdown = $('.nav__dropdown');
+    $navDropdownMenu = $('.nav__dropdown-menu'),
+    $navDropdown = $('.nav__dropdown');
 
 
-  if ( $('html').hasClass('mobile') ) {
+  if ($('html').hasClass('mobile')) {
 
-    $('body').on('click',function() {
+    $('body').on('click', function () {
       $navDropdownMenu.addClass('hide-dropdown');
     });
 
-    $navDropdown.on('click', '> a', function(e) {
+    $navDropdown.on('click', '> a', function (e) {
       e.preventDefault();
     });
 
-    $navDropdown.on('click',function(e) {
+    $navDropdown.on('click', function (e) {
       e.stopPropagation();
       $navDropdownMenu.removeClass('hide-dropdown');
     });
@@ -150,18 +150,18 @@
 
   /* Sidenav Menu
   -------------------------------------------------------*/
-  $('.sidenav__menu-toggle').on('click', function(e) {
+  $('.sidenav__menu-toggle').on('click', function (e) {
     e.preventDefault();
-    
+
     var $this = $(this);
-    
+
     $this.parent().siblings().removeClass('sidenav__menu--is-open');
     $this.parent().siblings().find('li').removeClass('sidenav__menu--is-open');
     $this.parent().find('li').removeClass('sidenav__menu--is-open');
-    $this.parent().toggleClass('sidenav__menu--is-open');       
-    
+    $this.parent().toggleClass('sidenav__menu--is-open');
+
     if ($this.next().hasClass('show')) {
-      $this.next().removeClass('show').slideUp(350);    
+      $this.next().removeClass('show').slideUp(350);
     } else {
       $this.parent().parent().find('li .sidenav__menu-dropdown').removeClass('show').slideUp(350);
       $this.next().toggleClass('show').slideToggle(350);
@@ -171,13 +171,13 @@
 
   /* Nav Seacrh
   -------------------------------------------------------*/
-  (function() {
+  (function () {
     var navSearchTrigger = $('.nav__search-trigger'),
-        navSearchTriggerIcon = navSearchTrigger.find('i'),
-        navSearchBox = $('.nav__search-box'), 
-        navSearchInput = $('.nav__search-input'); 
+      navSearchTriggerIcon = navSearchTrigger.find('i'),
+      navSearchBox = $('.nav__search-box'),
+      navSearchInput = $('.nav__search-input');
 
-    navSearchTrigger.on('click', function(e){
+    navSearchTrigger.on('click', function (e) {
       e.preventDefault();
       navSearchTriggerIcon.toggleClass('ui-close');
       navSearchBox.slideToggle();
@@ -188,7 +188,7 @@
 
   /* Mega Menu
   -------------------------------------------------------*/
-  function megaMenu(){
+  function megaMenu() {
     $('.nav__megamenu').each(function () {
       var $this = $(this);
 
@@ -196,16 +196,16 @@
       var offset = $this.closest('.nav__dropdown').offset();
       offset = offset.left;
       var containerOffset = $(window).width() - $('.container').outerWidth();
-      containerOffset = containerOffset /2;
+      containerOffset = containerOffset / 2;
       offset = offset - containerOffset - 15;
       $this.css('left', -offset);
     });
   }
-  
+
 
   /* Twitter Feed
   -------------------------------------------------------*/
-  if($('#tweets').length) {
+  if ($('#tweets').length) {
     function initTwitter() {
       var config1 = {
         "id": '594366594521804800',
@@ -225,11 +225,11 @@
 
   /* YouTube Video Playlist
   -------------------------------------------------------*/
-  (function(){ 
+  (function () {
     var videoPlaylistListItem = $('.video-playlist__list-item'),
-        videoPlaylistContentVideo = $('.video-playlist__content-video');     
+      videoPlaylistContentVideo = $('.video-playlist__content-video');
 
-    videoPlaylistListItem.on('click', function(e){
+    videoPlaylistListItem.on('click', function (e) {
       e.preventDefault();
       var $this = $(this);
       var thumbVideoUrl = $this.attr('href');
@@ -249,29 +249,29 @@
   -------------------------------------------------------*/
   var $newsTicker = $('.newsticker__list');
 
-  if($newsTicker.length) {
+  if ($newsTicker.length) {
     $newsTicker.newsTicker({
       row_height: 34,
       max_rows: 1,
       prevButton: $('#newsticker-button--prev'),
       nextButton: $('#newsticker-button--next')
     });
-  }  
-  
+  }
+
 
   /* Tabs
   -------------------------------------------------------*/
-  $('.tabs__trigger').on('click', function(e) {
+  $('.tabs__trigger').on('click', function (e) {
     var currentAttrValue = $(this).attr('href');
     $('.tabs__content-trigger ' + currentAttrValue).stop().fadeIn(1000).siblings().hide();
     $(this).parent('li').addClass('tabs__item--active').siblings().removeClass('tabs__item--active');
     e.preventDefault();
   });
-  
+
 
   /* Owl Carousel
   -------------------------------------------------------*/
-  function initOwlCarousel(){
+  function initOwlCarousel() {
 
     // Hero Slider
     $("#owl-hero-slider").owlCarousel({
@@ -283,16 +283,16 @@
       margin: 8,
       lazyLoad: true,
       navSpeed: 500,
-      navText: ['<i class="ui-arrow-left">','<i class="ui-arrow-right">'],
-      responsive:{
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">'],
+      responsive: {
         1200: {
-          items:4
+          items: 4
         },
-        768:{
-          items:2
+        768: {
+          items: 2
         },
-        540:{
-          items:2
+        540: {
+          items: 2
         }
       }
     });
@@ -307,13 +307,34 @@
       margin: 30,
       lazyLoad: true,
       navSpeed: 500,
-      navText: ['<i class="ui-arrow-left">','<i class="ui-arrow-right">'],
-      responsive:{
-        768:{
-          items:4
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">'],
+      responsive: {
+        768: {
+          items: 4
         },
-        540:{
-          items:3
+        540: {
+          items: 3
+        }
+      }
+    });
+
+    // Posts Carousel
+    $("#owl-partners").owlCarousel({
+      center: false,
+      items: 1,
+      loop: true,
+      nav: true,
+      dots: false,
+      margin: 30,
+      lazyLoad: true,
+      navSpeed: 500,
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">'],
+      responsive: {
+        768: {
+          items: 4
+        },
+        540: {
+          items: 3
         }
       }
     });
@@ -328,13 +349,13 @@
       margin: 20,
       lazyLoad: true,
       navSpeed: 500,
-      navText: ['<i class="ui-arrow-left">','<i class="ui-arrow-right">'],
-      responsive:{
-        768:{
-          items:3
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">'],
+      responsive: {
+        768: {
+          items: 3
         },
-        540:{
-          items:2
+        540: {
+          items: 2
         }
       }
     });
@@ -347,7 +368,7 @@
       dots: false,
       lazyLoad: true,
       navSpeed: 500,
-      navText: ['<i class="ui-arrow-left">','<i class="ui-arrow-right">']
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">']
     });
 
     // Single Image
@@ -358,7 +379,7 @@
       dots: false,
       lazyLoad: true,
       navSpeed: 500,
-      navText: ['<i class="ui-arrow-left">','<i class="ui-arrow-right">']
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">']
     });
 
     // Single Post Gallery
@@ -369,18 +390,18 @@
       dots: true,
       lazyLoad: true,
       navSpeed: 500,
-      navText: ['<i class="ui-arrow-left">','<i class="ui-arrow-right">']
+      navText: ['<i class="ui-arrow-left">', '<i class="ui-arrow-right">']
     });
 
     // Custom nav
     var owlCustomNav = $('#owl-headlines').owlCarousel();
 
     $(".owl-custom-nav__btn--prev").on('click', function () {
-        owlCustomNav.trigger('prev.owl.carousel');
+      owlCustomNav.trigger('prev.owl.carousel');
     });
 
     $(".owl-custom-nav__btn--next").on('click', function () {
-        owlCustomNav.trigger('next.owl.carousel');
+      owlCustomNav.trigger('next.owl.carousel');
     });
   };
 
@@ -412,9 +433,9 @@
 
   /* Sticky Socials
   -------------------------------------------------------*/
-  (function() {
+  (function () {
     var $stickyCol = $('.sticky-col');
-    if($stickyCol.length > 0) {
+    if ($stickyCol.length > 0) {
       $stickyCol.stick_in_parent({
         offset_top: 80
       });
@@ -429,20 +450,20 @@
   var submitContact = $('#submit-message'),
     message = $('#msg');
 
-  submitContact.on('click', function(e){
+  submitContact.on('click', function (e) {
     e.preventDefault();
 
     var $this = $(this);
-    
+
     $.ajax({
       type: "POST",
       url: 'contact.php',
       dataType: 'json',
       cache: false,
       data: $('#contact-form').serialize(),
-      success: function(data) {
+      success: function (data) {
 
-        if(data.info !== 'error'){
+        if (data.info !== 'error') {
           $this.parents('form').find('input[type=text],input[type=email],textarea,select').filter(':visible').val('');
           message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
         } else {
@@ -465,8 +486,8 @@
     }
   }
 
-  $('a[href="#top"]').on('click',function(){
-    $('html, body').animate({scrollTop: 0}, 1000, "easeInOutQuint");
+  $('a[href="#top"]').on('click', function () {
+    $('html, body').animate({ scrollTop: 0 }, 1000, "easeInOutQuint");
     return false;
   });
 

@@ -63,6 +63,8 @@ $magazines = new WP_Query([
    'posts_per_page' => 6,
 ]);
 $magazines = $magazines->posts;
+
+$media_partners = get_field("media_partners", 2747);
 ?>
 
 <!-- Trending Now -->
@@ -266,169 +268,10 @@ $magazines = $magazines->posts;
       <!-- Sidebar -->
       <aside class="col-lg-4 sidebar sidebar--right">
 
-         <!-- Widget Popular Posts -->
-         <aside class="widget widget-popular-posts">
-            <h4 class="widget-title">Popular Posts</h4>
-            <ul class="post-list-small">
-               <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                     <div class="post-list-small__img-holder">
-                        <div class="thumb-container thumb-100">
-                           <a href="single-post.html">
-                              <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_1.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                           </a>
-                        </div>
-                     </div>
-                     <div class="post-list-small__body">
-                        <h3 class="post-list-small__entry-title">
-                           <a href="single-post.html">Follow These Smartphone Habits of Successful Entrepreneurs</a>
-                        </h3>
-                        <ul class="entry__meta">
-                           <li class="entry__meta-author">
-                              <span>by</span>
-                              <a href="#">DeoThemes</a>
-                           </li>
-                           <li class="entry__meta-date">
-                              Jan 21, 2018
-                           </li>
-                        </ul>
-                     </div>
-                  </article>
-               </li>
-               <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                     <div class="post-list-small__img-holder">
-                        <div class="thumb-container thumb-100">
-                           <a href="single-post.html">
-                              <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_2.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                           </a>
-                        </div>
-                     </div>
-                     <div class="post-list-small__body">
-                        <h3 class="post-list-small__entry-title">
-                           <a href="single-post.html">Lose These 12 Bad Habits If You're Serious About Becoming a
-                              Millionaire</a>
-                        </h3>
-                        <ul class="entry__meta">
-                           <li class="entry__meta-author">
-                              <span>by</span>
-                              <a href="#">DeoThemes</a>
-                           </li>
-                           <li class="entry__meta-date">
-                              Jan 21, 2018
-                           </li>
-                        </ul>
-                     </div>
-                  </article>
-               </li>
-               <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                     <div class="post-list-small__img-holder">
-                        <div class="thumb-container thumb-100">
-                           <a href="single-post.html">
-                              <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_3.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                           </a>
-                        </div>
-                     </div>
-                     <div class="post-list-small__body">
-                        <h3 class="post-list-small__entry-title">
-                           <a href="single-post.html">June in Africa: Taxi wars, smarter cities and increased investments</a>
-                        </h3>
-                        <ul class="entry__meta">
-                           <li class="entry__meta-author">
-                              <span>by</span>
-                              <a href="#">DeoThemes</a>
-                           </li>
-                           <li class="entry__meta-date">
-                              Jan 21, 2018
-                           </li>
-                        </ul>
-                     </div>
-                  </article>
-               </li>
-               <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                     <div class="post-list-small__img-holder">
-                        <div class="thumb-container thumb-100">
-                           <a href="single-post.html">
-                              <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_4.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                           </a>
-                        </div>
-                     </div>
-                     <div class="post-list-small__body">
-                        <h3 class="post-list-small__entry-title">
-                           <a href="single-post.html">PUBG Desert Map Finally Revealed, Here Are All The Details</a>
-                        </h3>
-                        <ul class="entry__meta">
-                           <li class="entry__meta-author">
-                              <span>by</span>
-                              <a href="#">DeoThemes</a>
-                           </li>
-                           <li class="entry__meta-date">
-                              Jan 21, 2018
-                           </li>
-                        </ul>
-                     </div>
-                  </article>
-               </li>
-            </ul>
-         </aside> <!-- end widget popular posts -->
+         <?= get_template_part("template-parts/sidebar/circle-posts"); ?>
+         <?= get_template_part("template-parts/sidebar/newsletter"); ?>
 
-         <!-- Widget Newsletter -->
-         <aside class="widget widget_mc4wp_form_widget">
-            <h4 class="widget-title">Newsletter</h4>
-            <p class="newsletter__text">
-               <i class="ui-email newsletter__icon"></i>
-               Subscribe for our daily news
-            </p>
-            <form class="mc4wp-form" method="post">
-               <div class="mc4wp-form-fields">
-                  <div class="form-group">
-                     <input type="email" name="EMAIL" placeholder="Your email" required="">
-                  </div>
-                  <div class="form-group">
-                     <input type="submit" class="btn btn-lg btn-color" value="Sign Up">
-                  </div>
-               </div>
-            </form>
-         </aside> <!-- end widget newsletter -->
-
-         <!-- Widget Socials -->
-         <aside class="widget widget-socials">
-            <h4 class="widget-title">Let's hang out on social</h4>
-            <div class="socials socials--wide socials--large">
-               <div class="row row-16">
-                  <div class="col">
-                     <a class="social social-facebook" href="#" title="facebook" target="_blank" aria-label="facebook">
-                        <i class="ui-facebook"></i>
-                        <span class="social__text">Facebook</span>
-                     </a><!--
-                  --><a class="social social-twitter" href="#" title="twitter" target="_blank" aria-label="twitter">
-                        <i class="ui-twitter"></i>
-                        <span class="social__text">Twitter</span>
-                     </a><!--
-                  --><a class="social social-youtube" href="#" title="youtube" target="_blank" aria-label="youtube">
-                        <i class="ui-youtube"></i>
-                        <span class="social__text">Youtube</span>
-                     </a>
-                  </div>
-                  <div class="col">
-                     <a class="social social-google-plus" href="#" title="google" target="_blank" aria-label="google">
-                        <i class="ui-google"></i>
-                        <span class="social__text">Google+</span>
-                     </a><!--
-                  --><a class="social social-instagram" href="#" title="instagram" target="_blank" aria-label="instagram">
-                        <i class="ui-instagram"></i>
-                        <span class="social__text">Instagram</span>
-                     </a><!--
-                  --><a class="social social-rss" href="#" title="rss" target="_blank" aria-label="rss">
-                        <i class="ui-rss"></i>
-                        <span class="social__text">Rss</span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </aside> <!-- end widget socials -->
+         <?= get_template_part("template-parts/sidebar/social"); ?>
 
       </aside> <!-- end sidebar -->
 
@@ -515,7 +358,7 @@ $magazines = $magazines->posts;
 
             <div class="row">
                <?php foreach ($magazines as $mag) : ?>
-                  <div class="col-lg-4">
+                  <div class="col-md-4">
                      <article class="mb-3">
                         <a href="<?= get_permalink($mag->ID); ?>">
                            <?= get_the_post_thumbnail($mag->ID, 'medium-thumb'); ?>
@@ -530,6 +373,8 @@ $magazines = $magazines->posts;
 
       </div> <!-- end posts -->
 
+
+
       <!-- Sidebar 1 -->
       <aside class="col-lg-4 sidebar sidebar--1 sidebar--right">
 
@@ -540,98 +385,30 @@ $magazines = $magazines->posts;
             </a>
          </aside> <!-- end widget ad 300 -->
 
-         <!-- Widget Categories -->
-         <aside class="widget widget_categories">
-            <h4 class="widget-title">Categories</h4>
-            <ul>
-               <li><a href="categories.html">World <span class="categories-count">5</span></a></li>
-               <li><a href="categories.html">Lifestyle <span class="categories-count">7</span></a></li>
-               <li><a href="categories.html">Business <span class="categories-count">5</span></a></li>
-               <li><a href="categories.html">Fashion <span class="categories-count">8</span></a></li>
-               <li><a href="categories.html">Investment <span class="categories-count">10</span></a></li>
-               <li><a href="categories.html">Technology <span class="categories-count">6</span></a></li>
-            </ul>
-         </aside> <!-- end widget categories -->
+         <?= get_template_part("template-parts/sidebar/top-categories"); ?>
 
-         <!-- Widget Recommended (Rating) -->
-         <aside class="widget widget-rating-posts">
-            <h4 class="widget-title">Recommended</h4>
-            <article class="entry">
-               <div class="entry__img-holder">
-                  <a href="single-post.html">
-                     <div class="thumb-container thumb-60">
-                        <img data-src="<?= get_template_directory_uri() ?>/img/content/review/review_post_1.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" class="entry__img lazyload" alt="">
-                     </div>
-                  </a>
-               </div>
 
-               <div class="entry__body">
-                  <div class="entry__header">
-
-                     <h2 class="entry__title">
-                        <a href="single-post.html">UN’s WFP Building Up Blockchain-Based Payments System</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-rating">
-                           <i class="ui-star"></i><!--
-                      --><i class="ui-star"></i><!--
-                      --><i class="ui-star"></i><!--
-                      --><i class="ui-star"></i><!--
-                      --><i class="ui-star-empty"></i>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </article>
-            <article class="entry">
-               <div class="entry__img-holder">
-                  <a href="single-post.html">
-                     <div class="thumb-container thumb-60">
-                        <img data-src="<?= get_template_directory_uri() ?>/img/content/review/review_post_2.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" class="entry__img lazyload" alt="">
-                     </div>
-                  </a>
-               </div>
-
-               <div class="entry__body">
-                  <div class="entry__header">
-
-                     <h2 class="entry__title">
-                        <a href="single-post.html">4 credit card tips to make business travel easier</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-rating">
-                           <i class="ui-star"></i><!--
-                      --><i class="ui-star"></i><!--
-                      --><i class="ui-star"></i><!--
-                      --><i class="ui-star"></i><!--
-                      --><i class="ui-star-empty"></i>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </article>
-         </aside> <!-- end widget recommended (rating) -->
       </aside> <!-- end sidebar 1 -->
    </div> <!-- content secondary -->
 
+   <!-- Carousel posts -->
+   <section class="section mb-0">
+      <div class="title-wrap title-wrap--line title-wrap--pr">
+         <h3 class="section-title">Partners</h3>
+      </div>
+
+      <!-- Slider -->
+      <div id="owl-partners" class="owl-carousel owl-theme owl-carousel--arrows-outside">
+         <?php foreach ($media_partners as $key => $mp) : ?>
+            <?php if ($key > 9) break; ?>
+            <div class="home-media-partner">
+               <img class="white-element" src="<?= $mp['image']['sizes']['medium-thumb'] ?>" alt="">
+            </div>
+         <?php endforeach; ?>
+
+      </div> <!-- end slider -->
+
+   </section> <!-- end carousel posts -->
 
 </div> <!-- end main container -->
 
