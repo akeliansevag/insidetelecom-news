@@ -52,6 +52,17 @@ $editors = new WP_Query([
 ]);
 $editors = $editors->posts;
 
+$events = new WP_Query([
+   'post_type' => 'event',
+   'posts_per_page' => 2,
+]);
+$events = $events->posts;
+
+$magazines = new WP_Query([
+   'post_type' => 'magazine',
+   'posts_per_page' => 6,
+]);
+$magazines = $magazines->posts;
 ?>
 
 <!-- Trending Now -->
@@ -459,368 +470,32 @@ $editors = $editors->posts;
    <!-- Posts from categories -->
    <section class="section mb-0">
       <div class="row">
-
-         <!-- Technology -->
-         <div class="col-md-6">
-            <div class="title-wrap title-wrap--line">
-               <h3 class="section-title">technology</h3>
-            </div>
-            <div class="row">
-               <div class="col-lg-6">
-                  <article class="entry thumb thumb--size-2">
-                     <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/thumb/thumb_post_1.jpg');">
-                        <div class="bottom-gradient"></div>
-                        <div class="thumb-text-holder thumb-text-holder--1">
-                           <h2 class="thumb-entry-title">
-                              <a href="single-post.html">Gov’t Toughens Rules to Ensure 3rd Telco Player Doesn’t Slack Off</a>
-                           </h2>
-                           <ul class="entry__meta">
-                              <li class="entry__meta-author">
-                                 <span>by</span>
-                                 <a href="#">DeoThemes</a>
-                              </li>
-                              <li class="entry__meta-date">
-                                 Jan 21, 2018
-                              </li>
-                           </ul>
-                        </div>
-                        <a href="single-post.html" class="thumb-url"></a>
-                     </div>
-                  </article>
-               </div>
-               <div class="col-lg-6">
-                  <ul class="post-list-small post-list-small--dividers post-list-small--arrows mb-24">
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Need a Website for Your Business? Google Can Help</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Here Are Ways You Can Earn From the Sharing Economy</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">19 Crazy Facts You Probably Didn't Know About Google</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">What Household Chores Would Filipinos Love to Assign to Robots?</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div> <!-- end technology -->
-
-         <!-- Travel -->
-         <div class="col-md-6">
-            <div class="title-wrap title-wrap--line">
-               <h3 class="section-title">travel</h3>
-            </div>
-            <div class="row">
-               <div class="col-lg-6">
-                  <article class="entry thumb thumb--size-2">
-                     <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/thumb/thumb_post_2.jpg');">
-                        <div class="bottom-gradient"></div>
-                        <div class="thumb-text-holder thumb-text-holder--1">
-                           <h2 class="thumb-entry-title">
-                              <a href="single-post.html">4 credit card tips to make business travel easier</a>
-                           </h2>
-                           <ul class="entry__meta">
-                              <li class="entry__meta-author">
-                                 <span>by</span>
-                                 <a href="#">DeoThemes</a>
-                              </li>
-                              <li class="entry__meta-date">
-                                 Jan 21, 2018
-                              </li>
-                           </ul>
-                        </div>
-                        <a href="single-post.html" class="thumb-url"></a>
-                     </div>
-                  </article>
-               </div>
-               <div class="col-lg-6">
-                  <ul class="post-list-small post-list-small--dividers post-list-small--arrows mb-24">
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">5 deadliest luxury vacation spots on Earth</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">These 4 startups can send you to work and travel abroad</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">9 mind-blowing travel destinations for adventure seekers</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">These Small Business Ideas Are Great for Entrepreneurial
-                                    Children</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div> <!-- end travel -->
-
-         <!-- Cryptocurrency -->
-         <div class="col-md-6">
-            <div class="title-wrap title-wrap--line">
-               <h3 class="section-title">Cryptocurrency</h3>
-            </div>
-            <div class="row">
-               <div class="col-lg-6">
-                  <article class="entry thumb thumb--size-2">
-                     <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/thumb/thumb_post_3.jpg');">
-                        <div class="bottom-gradient"></div>
-                        <div class="thumb-text-holder thumb-text-holder--1">
-                           <h2 class="thumb-entry-title">
-                              <a href="single-post.html">UN’s WFP Building Up Blockchain-Based Payments System</a>
-                           </h2>
-                           <ul class="entry__meta">
-                              <li class="entry__meta-author">
-                                 <span>by</span>
-                                 <a href="#">DeoThemes</a>
-                              </li>
-                              <li class="entry__meta-date">
-                                 Jan 21, 2018
-                              </li>
-                           </ul>
-                        </div>
-                        <a href="single-post.html" class="thumb-url"></a>
-                     </div>
-                  </article>
-               </div>
-               <div class="col-lg-6">
-                  <ul class="post-list-small post-list-small--dividers post-list-small--arrows mb-24">
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Cryptocurrency Markets: Weekly Trading Overview (06-13 October)</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">MyEtherWallet Opens the Ethereum Universe for You</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Put Your Money Where Your Marketing Is</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">3 ways for startups to master the art of emailing</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div> <!-- end cryptocurrency -->
-
-         <!-- Investment -->
-         <div class="col-md-6">
-            <div class="title-wrap title-wrap--line">
-               <h3 class="section-title">Investment</h3>
-            </div>
-            <div class="row">
-               <div class="col-lg-6">
-                  <article class="entry thumb thumb--size-2">
-                     <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/thumb/thumb_post_4.jpg');">
-                        <div class="bottom-gradient"></div>
-                        <div class="thumb-text-holder thumb-text-holder--1">
-                           <h2 class="thumb-entry-title">
-                              <a href="single-post.html">14 easy, low-cost ways authors can promote their books</a>
-                           </h2>
-                           <ul class="entry__meta">
-                              <li class="entry__meta-author">
-                                 <span>by</span>
-                                 <a href="#">DeoThemes</a>
-                              </li>
-                              <li class="entry__meta-date">
-                                 Jan 21, 2018
-                              </li>
-                           </ul>
-                        </div>
-                        <a href="single-post.html" class="thumb-url"></a>
-                     </div>
-                  </article>
-               </div>
-               <div class="col-lg-6">
-                  <ul class="post-list-small post-list-small--dividers post-list-small--arrows mb-24">
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Financial Adviser: 4 ways to know how much dividends you should
-                                    pay</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">3 cash flow rules first-time business owners need to know</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Common credit mistakes new business owners make</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                     <li class="post-list-small__item">
-                        <article class="post-list-small__entry">
-                           <div class="post-list-small__body">
-                              <h3 class="post-list-small__entry-title">
-                                 <a href="single-post.html">Ask these 2 questions every time you make a purchase</a>
-                              </h3>
-                           </div>
-                        </article>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div> <!-- end investment -->
-
+         <?= get_template_part("template-parts/posts-style-1", "", ['category_id' => 556]); ?>
+         <?= get_template_part("template-parts/posts-style-1", "", ['category_id' => 560]); ?>
+         <?= get_template_part("template-parts/posts-style-1", "", ['category_id' => 566]); ?>
+         <?= get_template_part("template-parts/posts-style-1", "", ['category_id' => 182]); ?>
       </div>
    </section> <!-- end posts from categories -->
 
    <!-- Video posts -->
    <section class="section mb-24">
       <div class="title-wrap title-wrap--line">
-         <h3 class="section-title">Videos</h3>
-         <a href="#" class="all-posts-url">View All</a>
+         <h3 class="section-title">Events</h3>
+         <a href="/events" class="all-posts-url">View All</a>
       </div>
       <div class="row card-row">
-         <div class="col-md-6">
-            <article class="entry card">
-               <div class="entry__img-holder card__img-holder">
-                  <a href="single-post.html">
-                     <div class="thumb-container thumb-65">
-                        <img data-src="<?= get_template_directory_uri() ?>/img/content/grid/grid_post_5.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" class="entry__img lazyload" alt="" />
-                     </div>
-                  </a>
-                  <div class="entry__play-time"><i class="ui-play"></i>3:21</div>
-               </div>
+         <?php foreach ($events as $ev) : ?>
+            <div class="col-md-6">
+               <article class="">
+                  <div class="entry__img-holder card__img-holder">
+                     <a href="<?= get_permalink($ev->ID) ?>">
+                        <img src="<?= get_the_post_thumbnail_url($ev->ID, 'medium-thumb', ['class' => 'no-lazy-load']); ?>" class="entry__img lazyload" alt="" />
+                     </a>
+                  </div>
+               </article>
+            </div>
+         <?php endforeach; ?>
 
-               <div class="entry__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">What Days and Hours are PH Online Shoppers Most Likely to Buy?</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
-         </div>
-         <div class="col-md-6">
-            <article class="entry card">
-               <div class="entry__img-holder card__img-holder">
-                  <a href="single-post.html">
-                     <div class="thumb-container thumb-65">
-                        <img data-src="<?= get_template_directory_uri() ?>/img/content/grid/grid_post_6.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" class="entry__img lazyload" alt="" />
-                     </div>
-                  </a>
-                  <div class="entry__play-time"><i class="ui-play"></i>3:21</div>
-               </div>
-
-               <div class="entry__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">Want to work at Tesla? This program guarantees you a job after
-                           graduation</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
-         </div>
       </div>
    </section> <!-- end video posts -->
 
@@ -834,187 +509,24 @@ $editors = $editors->posts;
          <!-- Worldwide News -->
          <section class="section">
             <div class="title-wrap title-wrap--line">
-               <h3 class="section-title">Worldwide</h3>
-               <a href="#" class="all-posts-url">View All</a>
+               <h3 class="section-title">Magazines</h3>
+               <a href="/magazines" class="all-posts-url">View All</a>
             </div>
 
-            <article class="entry card post-list">
-               <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(<?= get_template_directory_uri() ?>/img/content/list/list_post_1.jpg)">
-                  <a href="single-post.html" class="thumb-url"></a>
-                  <img src="<?= get_template_directory_uri() ?>/img/content/list/list_post_1.jpg" alt="" class="entry__img d-none">
-                  <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue">Business</a>
-               </div>
+            <div class="row">
+               <?php foreach ($magazines as $mag) : ?>
+                  <div class="col-lg-4">
+                     <article class="mb-3">
+                        <a href="<?= get_permalink($mag->ID); ?>">
+                           <?= get_the_post_thumbnail($mag->ID, 'medium-thumb'); ?>
+                        </a>
+                     </article>
+                  </div>
+               <?php endforeach; ?>
 
-               <div class="entry__body post-list__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">These Are the 20 Best Places to Work in 2018</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
+            </div>
 
-            <article class="entry card post-list">
-               <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(<?= get_template_directory_uri() ?>/img/content/list/list_post_2.jpg)">
-                  <a href="single-post.html" class="thumb-url"></a>
-                  <img src="<?= get_template_directory_uri() ?>/img/content/list/list_post_2.jpg" alt="" class="entry__img d-none">
-                  <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--purple">Fashion</a>
-               </div>
-
-               <div class="entry__body post-list__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">This Co-Working Space is a One-Stop Shop</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
-
-            <article class="entry card post-list">
-               <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(<?= get_template_directory_uri() ?>/img/content/list/list_post_3.jpg)">
-                  <a href="single-post.html" class="thumb-url"></a>
-                  <img src="<?= get_template_directory_uri() ?>/img/content/list/list_post_3.jpg" alt="" class="entry__img d-none">
-                  <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--orange">Mining</a>
-               </div>
-
-               <div class="entry__body post-list__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">This 6-Year-Old Kid Reportedly Earned US$11 Million on YouTube</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
-
-            <article class="entry card post-list">
-               <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(<?= get_template_directory_uri() ?>/img/content/list/list_post_4.jpg)">
-                  <a href="single-post.html" class="thumb-url"></a>
-                  <img src="<?= get_template_directory_uri() ?>/img/content/list/list_post_4.jpg" alt="" class="entry__img d-none">
-                  <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet">World</a>
-               </div>
-
-               <div class="entry__body post-list__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">Rating Agency Breaks with Financial Community </a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
-
-            <article class="entry card post-list">
-               <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(<?= get_template_directory_uri() ?>/img/content/list/list_post_5.jpg)">
-                  <a href="single-post.html" class="thumb-url"></a>
-                  <img src="<?= get_template_directory_uri() ?>/img/content/list/list_post_5.jpg" alt="" class="entry__img d-none">
-                  <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--red">Investment</a>
-               </div>
-
-               <div class="entry__body post-list__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">Decentralized Exchanges (DEX) – What Are They?</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
-
-            <article class="entry card post-list">
-               <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(<?= get_template_directory_uri() ?>/img/content/list/list_post_6.jpg)">
-                  <a href="single-post.html" class="thumb-url"></a>
-                  <img src="<?= get_template_directory_uri() ?>/img/content/list/list_post_6.jpg" alt="" class="entry__img d-none">
-                  <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--cyan">Technology</a>
-               </div>
-
-               <div class="entry__body post-list__body card__body">
-                  <div class="entry__header">
-                     <h2 class="entry__title">
-                        <a href="single-post.html">Decentralized Exchanges (DEX) – What Are They?</a>
-                     </h2>
-                     <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                           <span>by</span>
-                           <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">
-                           Jan 21, 2018
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="entry__excerpt">
-                     <p>iPrice Group report offers insights on daily e-commerce activity in the ...</p>
-                  </div>
-               </div>
-            </article>
          </section> <!-- end worldwide news -->
-
-         <!-- Pagination -->
-         <nav class="pagination">
-            <span class="pagination__page pagination__page--current">1</span>
-            <a href="#" class="pagination__page">2</a>
-            <a href="#" class="pagination__page">3</a>
-            <a href="#" class="pagination__page">4</a>
-            <a href="#" class="pagination__page pagination__icon pagination__page--next"><i class="ui-arrow-right"></i></a>
-         </nav>
 
       </div> <!-- end posts -->
 
