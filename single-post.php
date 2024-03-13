@@ -7,6 +7,9 @@ $author = get_the_author_meta('display_name', $post->post_author);
 
 $related = get_posts(array('category__in' => wp_get_post_categories($post->ID), 'numberposts' => 5, 'post__not_in' => array($post->ID)));
 $youtube_video_url = get_field("youtube_video_url");
+
+$next_post = get_next_post(true);
+$prev_post = get_previous_post(true);
 ?>
 
 <div class="main-container container mt-5" id="main-container">
@@ -103,87 +106,18 @@ $youtube_video_url = get_field("youtube_video_url");
                                 <i class="ui-arrow-left"></i>
                                 <span class="entry-navigation__label">Previous Post</span>
                                 <div class="entry-navigation__link">
-                                    <a href="#" rel="next">How to design your first mobile app</a>
+                                    <a href="<?= get_permalink($prev_post->ID) ?>" rel="next"><?= print_title($prev_post) ?></a>
                                 </div>
                             </div>
                             <div class="entry-navigation--right">
                                 <span class="entry-navigation__label">Next Post</span>
                                 <i class="ui-arrow-right"></i>
                                 <div class="entry-navigation__link">
-                                    <a href="#" rel="prev">Video Youtube format post. Made with WordPress</a>
+                                    <a href="<?= get_permalink($next_post->ID) ?>" rel="prev"><?= print_title($next_post) ?></a>
                                 </div>
                             </div>
                         </div>
                     </nav>
-
-
-
-                    <!-- Related Posts -->
-                    <section class="section related-posts mt-40 mb-0">
-                        <div class="title-wrap title-wrap--line title-wrap--pr">
-                            <h3 class="section-title">Related Articles</h3>
-                        </div>
-
-                        <!-- Slider -->
-                        <div id="owl-posts-3-items" class="owl-carousel owl-theme owl-carousel--arrows-outside">
-                            <article class="entry thumb thumb--size-1">
-                                <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/carousel/carousel_post_1.jpg');">
-                                    <div class="bottom-gradient"></div>
-                                    <div class="thumb-text-holder">
-                                        <h2 class="thumb-entry-title">
-                                            <a href="single-post.html">9 Things to Consider Before Accepting a New Job</a>
-                                        </h2>
-                                    </div>
-                                    <a href="single-post.html" class="thumb-url"></a>
-                                </div>
-                            </article>
-                            <article class="entry thumb thumb--size-1">
-                                <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/carousel/carousel_post_2.jpg');">
-                                    <div class="bottom-gradient"></div>
-                                    <div class="thumb-text-holder">
-                                        <h2 class="thumb-entry-title">
-                                            <a href="single-post.html">Gov’t Toughens Rules to Ensure 3rd Telco Player Doesn’t Slack Off</a>
-                                        </h2>
-                                    </div>
-                                    <a href="single-post.html" class="thumb-url"></a>
-                                </div>
-                            </article>
-                            <article class="entry thumb thumb--size-1">
-                                <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/carousel/carousel_post_3.jpg');">
-                                    <div class="bottom-gradient"></div>
-                                    <div class="thumb-text-holder">
-                                        <h2 class="thumb-entry-title">
-                                            <a href="single-post.html">(Infographic) Is Work-Life Balance Even Possible?</a>
-                                        </h2>
-                                    </div>
-                                    <a href="single-post.html" class="thumb-url"></a>
-                                </div>
-                            </article>
-                            <article class="entry thumb thumb--size-1">
-                                <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/carousel/carousel_post_4.jpg');">
-                                    <div class="bottom-gradient"></div>
-                                    <div class="thumb-text-holder">
-                                        <h2 class="thumb-entry-title">
-                                            <a href="single-post.html">Is Uber Considering To Sell its Southeast Asia Business to Grab?</a>
-                                        </h2>
-                                    </div>
-                                    <a href="single-post.html" class="thumb-url"></a>
-                                </div>
-                            </article>
-                            <article class="entry thumb thumb--size-1">
-                                <div class="entry__img-holder thumb__img-holder" style="background-image: url('<?= get_template_directory_uri() ?>/img/content/carousel/carousel_post_2.jpg');">
-                                    <div class="bottom-gradient"></div>
-                                    <div class="thumb-text-holder">
-                                        <h2 class="thumb-entry-title">
-                                            <a href="single-post.html">Gov’t Toughens Rules to Ensure 3rd Telco Player Doesn’t Slack Off</a>
-                                        </h2>
-                                    </div>
-                                    <a href="single-post.html" class="thumb-url"></a>
-                                </div>
-                            </article>
-                        </div> <!-- end slider -->
-
-                    </section> <!-- end related posts -->
 
                 </article> <!-- end standard post -->
 
@@ -192,169 +126,11 @@ $youtube_video_url = get_field("youtube_video_url");
 
         <!-- Sidebar -->
         <aside class="col-lg-4 sidebar sidebar--right">
-
-            <!-- Widget Popular Posts -->
-            <aside class="widget widget-popular-posts">
-                <h4 class="widget-title">Popular Posts</h4>
-                <ul class="post-list-small">
-                    <li class="post-list-small__item">
-                        <article class="post-list-small__entry clearfix">
-                            <div class="post-list-small__img-holder">
-                                <div class="thumb-container thumb-100">
-                                    <a href="single-post.html">
-                                        <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_1.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-list-small__body">
-                                <h3 class="post-list-small__entry-title">
-                                    <a href="single-post.html">Follow These Smartphone Habits of Successful Entrepreneurs</a>
-                                </h3>
-                                <ul class="entry__meta">
-                                    <li class="entry__meta-author">
-                                        <span>by</span>
-                                        <a href="#">DeoThemes</a>
-                                    </li>
-                                    <li class="entry__meta-date">
-                                        Jan 21, 2018
-                                    </li>
-                                </ul>
-                            </div>
-                        </article>
-                    </li>
-                    <li class="post-list-small__item">
-                        <article class="post-list-small__entry clearfix">
-                            <div class="post-list-small__img-holder">
-                                <div class="thumb-container thumb-100">
-                                    <a href="single-post.html">
-                                        <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_2.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-list-small__body">
-                                <h3 class="post-list-small__entry-title">
-                                    <a href="single-post.html">Lose These 12 Bad Habits If You're Serious About Becoming a Millionaire</a>
-                                </h3>
-                                <ul class="entry__meta">
-                                    <li class="entry__meta-author">
-                                        <span>by</span>
-                                        <a href="#">DeoThemes</a>
-                                    </li>
-                                    <li class="entry__meta-date">
-                                        Jan 21, 2018
-                                    </li>
-                                </ul>
-                            </div>
-                        </article>
-                    </li>
-                    <li class="post-list-small__item">
-                        <article class="post-list-small__entry clearfix">
-                            <div class="post-list-small__img-holder">
-                                <div class="thumb-container thumb-100">
-                                    <a href="single-post.html">
-                                        <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_3.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-list-small__body">
-                                <h3 class="post-list-small__entry-title">
-                                    <a href="single-post.html">June in Africa: Taxi wars, smarter cities and increased investments</a>
-                                </h3>
-                                <ul class="entry__meta">
-                                    <li class="entry__meta-author">
-                                        <span>by</span>
-                                        <a href="#">DeoThemes</a>
-                                    </li>
-                                    <li class="entry__meta-date">
-                                        Jan 21, 2018
-                                    </li>
-                                </ul>
-                            </div>
-                        </article>
-                    </li>
-                    <li class="post-list-small__item">
-                        <article class="post-list-small__entry clearfix">
-                            <div class="post-list-small__img-holder">
-                                <div class="thumb-container thumb-100">
-                                    <a href="single-post.html">
-                                        <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_4.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-list-small__body">
-                                <h3 class="post-list-small__entry-title">
-                                    <a href="single-post.html">PUBG Desert Map Finally Revealed, Here Are All The Details</a>
-                                </h3>
-                                <ul class="entry__meta">
-                                    <li class="entry__meta-author">
-                                        <span>by</span>
-                                        <a href="#">DeoThemes</a>
-                                    </li>
-                                    <li class="entry__meta-date">
-                                        Jan 21, 2018
-                                    </li>
-                                </ul>
-                            </div>
-                        </article>
-                    </li>
-                </ul>
-            </aside> <!-- end widget popular posts -->
-
-            <!-- Widget Newsletter -->
-            <aside class="widget widget_mc4wp_form_widget">
-                <h4 class="widget-title">Newsletter</h4>
-                <p class="newsletter__text">
-                    <i class="ui-email newsletter__icon"></i>
-                    Subscribe for our daily news
-                </p>
-                <form class="mc4wp-form" method="post">
-                    <div class="mc4wp-form-fields">
-                        <div class="form-group">
-                            <input type="email" name="EMAIL" placeholder="Your email" required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-lg btn-color" value="Sign Up">
-                        </div>
-                    </div>
-                </form>
-            </aside> <!-- end widget newsletter -->
-
-            <!-- Widget Socials -->
-            <aside class="widget widget-socials">
-                <h4 class="widget-title">Let's hang out on social</h4>
-                <div class="socials socials--wide socials--large">
-                    <div class="row row-16">
-                        <div class="col">
-                            <a class="social social-facebook" href="#" title="facebook" target="_blank" aria-label="facebook">
-                                <i class="ui-facebook"></i>
-                                <span class="social__text">Facebook</span>
-                            </a><!--
-                  --><a class="social social-twitter" href="#" title="twitter" target="_blank" aria-label="twitter">
-                                <i class="ui-twitter"></i>
-                                <span class="social__text">Twitter</span>
-                            </a><!--
-                  --><a class="social social-youtube" href="#" title="youtube" target="_blank" aria-label="youtube">
-                                <i class="ui-youtube"></i>
-                                <span class="social__text">Youtube</span>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="social social-google-plus" href="#" title="google" target="_blank" aria-label="google">
-                                <i class="ui-google"></i>
-                                <span class="social__text">Google+</span>
-                            </a><!--
-                  --><a class="social social-instagram" href="#" title="instagram" target="_blank" aria-label="instagram">
-                                <i class="ui-instagram"></i>
-                                <span class="social__text">Instagram</span>
-                            </a><!--
-                  --><a class="social social-rss" href="#" title="rss" target="_blank" aria-label="rss">
-                                <i class="ui-rss"></i>
-                                <span class="social__text">Rss</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </aside> <!-- end widget socials -->
+            <div class="sticky">
+                <?= get_template_part("template-parts/sidebar/circle-posts", "", ['title' => 'Related Articles', 'posts' => $related]); ?>
+                <?= get_template_part("template-parts/sidebar/newsletter"); ?>
+                <?= get_template_part("template-parts/sidebar/social"); ?>
+            </div>
 
         </aside> <!-- end sidebar -->
 

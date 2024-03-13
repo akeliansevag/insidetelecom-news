@@ -10,7 +10,7 @@
                                           <img src="<?= get_template_directory_uri() ?>/img/logo_default_white.png" srcset="<?= get_template_directory_uri() ?>/img/logo_default_white.png 1x, img/logo_default_white@2x.png 2x" class="logo__img" alt="">
                                     </a>
                                     <p class="copyright">
-                                          © 2018 Deus | Made by <a href="https://deothemes.com">DeoThemes</a>
+                                          © Copyright <?= date('Y'); ?>, All Rights Reserved
                                     </p>
                                     <div class="socials socials--large socials--rounded mb-24">
                                           <a class="social social-facebook" href="https://www.facebook.com/insidetelecomnews" target="_blank" aria-label="facebook">
@@ -36,72 +36,56 @@
                         <div class="col-lg-2 col-md-6">
                               <aside class="widget widget_nav_menu">
                                     <h4 class="widget-title">Useful Links</h4>
-                                    <ul>
-                                          <li><a href="about.html">About</a></li>
-                                          <li><a href="contact.html">News</a></li>
-                                          <li><a href="categories.html">Advertise</a></li>
-                                          <li><a href="shortcodes.html">Support</a></li>
-                                          <li><a href="shortcodes.html">Features</a></li>
-                                          <li><a href="shortcodes.html">Contact</a></li>
-                                    </ul>
+                                    <div class="d-flex">
+                                          <!-- <?= wp_nav_menu(['menu' => 'footer-menu-1']); ?> -->
+                                          <?= wp_nav_menu(['menu' => 'footer-menu-2']); ?>
+                                    </div>
+
                               </aside>
                         </div>
 
                         <div class="col-lg-4 col-md-6">
                               <aside class="widget widget-popular-posts">
-                                    <h4 class="widget-title">Popular Posts</h4>
+                                    <h4 class="widget-title">Latest Posts</h4>
+                                    <?php
+                                    $latest = new WP_Query([
+                                          'category__not_in' => 177,
+                                          'posts_per_page' => 2,
+                                    ]);
+                                    $latest = $latest->posts;
+                                    ?>
                                     <ul class="post-list-small">
-                                          <li class="post-list-small__item">
-                                                <article class="post-list-small__entry clearfix">
-                                                      <div class="post-list-small__img-holder">
-                                                            <div class="thumb-container thumb-100">
-                                                                  <a href="single-post.html">
-                                                                        <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_1.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                                                                  </a>
+                                          <?php foreach ($latest as $post) : ?>
+                                                <li class="post-list-small__item">
+                                                      <article class="post-list-small__entry clearfix">
+                                                            <div class="post-list-small__img-holder">
+                                                                  <div class="thumb-container thumb-100">
+                                                                        <a href="<?= get_permalink($post->ID) ?>">
+                                                                              <img data-src="<?= get_the_post_thumbnail_url($post->ID); ?>" src="<?= get_the_post_thumbnail_url($post->ID); ?>" alt="" class="it-cover post-list-small__img--rounded lazyload">
+                                                                        </a>
+                                                                  </div>
                                                             </div>
-                                                      </div>
-                                                      <div class="post-list-small__body">
-                                                            <h3 class="post-list-small__entry-title">
-                                                                  <a href="single-post.html">Follow These Smartphone Habits of Successful Entrepreneurs</a>
-                                                            </h3>
-                                                            <ul class="entry__meta">
-                                                                  <li class="entry__meta-author">
-                                                                        <span>by</span>
-                                                                        <a href="#">DeoThemes</a>
-                                                                  </li>
-                                                                  <li class="entry__meta-date">
-                                                                        Jan 21, 2018
-                                                                  </li>
-                                                            </ul>
-                                                      </div>
-                                                </article>
-                                          </li>
-                                          <li class="post-list-small__item">
-                                                <article class="post-list-small__entry clearfix">
-                                                      <div class="post-list-small__img-holder">
-                                                            <div class="thumb-container thumb-100">
-                                                                  <a href="single-post.html">
-                                                                        <img data-src="<?= get_template_directory_uri() ?>/img/content/post_small/post_small_2.jpg" src="<?= get_template_directory_uri() ?>/img/empty.png" alt="" class="post-list-small__img--rounded lazyload">
-                                                                  </a>
+                                                            <div class="post-list-small__body">
+                                                                  <h3 class="post-list-small__entry-title">
+                                                                        <a href="<?= get_permalink($post->ID) ?>"><?= print_title($post) ?></a>
+                                                                  </h3>
+                                                                  <ul class="entry__meta">
+                                                                        <li class="entry__meta-author">
+                                                                              <?php $author = get_the_author_meta('display_name', $post->post_author); ?>
+                                                                              <span>by</span>
+                                                                              <a href="<?= get_author_posts_url($post) ?>"><?= $author ?></a>
+                                                                        </li>
+                                                                        <li class="entry__meta-date">
+                                                                              <?php
+                                                                              $time = date("M d, Y", strtotime($post->post_date));
+                                                                              ?>
+                                                                              <?= ucwords($time) ?>
+                                                                        </li>
+                                                                  </ul>
                                                             </div>
-                                                      </div>
-                                                      <div class="post-list-small__body">
-                                                            <h3 class="post-list-small__entry-title">
-                                                                  <a href="single-post.html">Lose These 12 Bad Habits If You're Serious About Becoming a
-                                                                        Millionaire</a>
-                                                            </h3>
-                                                            <ul class="entry__meta">
-                                                                  <li class="entry__meta-author">
-                                                                        <span>by</span>
-                                                                        <a href="#">DeoThemes</a>
-                                                                  </li>
-                                                                  <li class="entry__meta-date">
-                                                                        Jan 21, 2018
-                                                                  </li>
-                                                            </ul>
-                                                      </div>
-                                                </article>
-                                          </li>
+                                                      </article>
+                                                </li>
+                                          <?php endforeach; ?>
                                     </ul>
                               </aside>
                         </div>

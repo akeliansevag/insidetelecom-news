@@ -63,7 +63,8 @@ $menuitems = wp_get_nav_menu_items($menu_name);
                                                                         <a href="<?= get_permalink($p->ID) ?>">
                                                                             <?= get_the_post_thumbnail($p->ID, 'small-thumb', ['class' => 'entry__img submenu-image']); ?>
                                                                         </a>
-                                                                        <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet">world</a>
+                                                                        <?php $cat = get_the_category($p->ID); ?>
+                                                                        <a href="<?= get_category_link($cat[0]) ?>" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet"><?= $cat[0]->name; ?></a>
                                                                     </div>
 
                                                                     <div class="entry__body">
