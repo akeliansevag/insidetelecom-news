@@ -65,6 +65,13 @@ $magazines = new WP_Query([
 $magazines = $magazines->posts;
 
 $media_partners = get_field("media_partners", 2747);
+
+$medtech = new WP_Query([
+   'cat' => [509],
+   'posts_per_page' => 4,
+]);
+$medtech = $medtech->posts;
+
 ?>
 
 <!-- Trending Now -->
@@ -268,7 +275,7 @@ $media_partners = get_field("media_partners", 2747);
       <!-- Sidebar -->
       <aside class="col-lg-4 sidebar sidebar--right">
 
-         <?= get_template_part("template-parts/sidebar/circle-posts"); ?>
+         <?= get_template_part("template-parts/sidebar/circle-posts", "", ['title' => 'MedTech', 'posts' => $medtech]); ?>
          <?= get_template_part("template-parts/sidebar/newsletter"); ?>
 
          <?= get_template_part("template-parts/sidebar/social"); ?>
