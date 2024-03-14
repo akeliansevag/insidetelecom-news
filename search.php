@@ -36,14 +36,17 @@ $posts = $query->posts;
         <!-- Posts -->
         <div class="col-lg-8 blog__content mb-72">
             <h1 class="page-title">Search results for <i>"<?= $q ?>"</i></h1>
-
-            <div class="row card-row">
-                <?php foreach ($posts as $p) : ?>
-                    <div class="col-md-6">
-                        <?= get_template_part("template-parts/article-card", "", ['post' => $p]) ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+            <?php if ($posts) : ?>
+                <div class="row card-row">
+                    <?php foreach ($posts as $p) : ?>
+                        <div class="col-md-6">
+                            <?= get_template_part("template-parts/article-card", "", ['post' => $p]) ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php else : ?>
+                <p class="mt-5">No posts to display.</p>
+            <?php endif; ?>
 
             <!-- Pagination -->
             <nav class="pagination">
