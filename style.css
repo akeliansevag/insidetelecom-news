@@ -85,3 +85,12 @@
     color: #fff;
     border-color: transparent;
 }
+
+.media-partner{
+	border:1px solid #000000;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
