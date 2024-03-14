@@ -109,8 +109,8 @@ $menuitems = wp_get_nav_menu_items($menu_name);
                             <i class="ui-search nav__search-trigger-icon"></i>
                         </a>
                         <div class="nav__search-box" id="nav__search-box">
-                            <form class="nav__search-form">
-                                <input type="text" placeholder="Search an article" class="nav__search-input">
+                            <form class="nav__search-form" action="<?= home_url() ?>">
+                                <input name="s" type="text" placeholder="Search an article" class="nav__search-input">
                                 <button type="submit" class="search-button btn btn-lg btn-color btn-button">
                                     <i class="ui-search nav__search-icon"></i>
                                 </button>
