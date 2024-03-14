@@ -5,7 +5,7 @@ $cat = get_the_category($post->ID);
 $time = human_time_diff(get_the_time('U', $post->ID), current_time('timestamp'));
 $author = get_the_author_meta('display_name', $post->post_author);
 
-$related = get_posts(array('category__in' => wp_get_post_categories($post->ID), 'numberposts' => 5, 'post__not_in' => array($post->ID)));
+$related = get_posts(array('category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID)));
 $youtube_video_url = get_field("youtube_video_url");
 
 $next_post = get_next_post(true);

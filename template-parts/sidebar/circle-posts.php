@@ -1,8 +1,18 @@
 <?php
 $posts = [];
-$title = "";
+$title = "Latest Articles";
 if ($args['posts']) {
     $posts = $args['posts'];
+} else {
+    $latest = new WP_Query([
+        'category__not_in' => 177,
+        'posts_per_page' => 4,
+    ]);
+    $posts = $latest->posts;
+}
+
+if ($args['title']) {
+    $title = $args['title'];
 }
 
 ?>
@@ -10,7 +20,7 @@ if ($args['posts']) {
 <?php if ($posts) : ?>
     <!-- Widget Popular Posts -->
     <aside class="widget widget-popular-posts">
-        <h4 class="widget-title"><?= $args['title'] ? $args['title'] : '' ?></h4>
+        <h4 class="widget-title"><?= $title ?></h4>
         <ul class="post-list-small">
             <?php foreach ($posts as $post) : ?>
                 <li class="post-list-small__item">
