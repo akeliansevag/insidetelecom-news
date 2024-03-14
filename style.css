@@ -94,3 +94,17 @@
     height: 150px;
 }
 
+.wpcf7-not-valid-tip{
+	margin-top:-20px;
+	font-size:14px;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
+	border:none;
+}
+
+.contact-form .wpcf7 form .wpcf7-response-output {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 10px;
+}
