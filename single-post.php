@@ -52,6 +52,7 @@ $prev_post = get_previous_post(true);
 
                     <div class="entry__img-holder">
                         <?= get_the_post_thumbnail($post->ID, 'large', ['class' => 'entry__img']); ?>
+                        <?= get_the_post_thumbnail_caption($post->ID); ?>
                     </div>
 
                     <div class="entry__article-wrap">
