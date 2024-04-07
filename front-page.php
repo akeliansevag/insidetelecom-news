@@ -290,11 +290,11 @@ $medtech = $medtech->posts;
    </div> <!-- end content -->
 
    <!-- Ad Banner 728 -->
-   <div class="text-center pb-48">
+   <!--<div class="text-center pb-48">
       <a href="#">
          <img src="<?= get_template_directory_uri() ?>/img/content/placeholder_728.jpg" alt="">
       </a>
-   </div>
+   </div>-->
 
    <!-- Carousel posts -->
    <section class="section mb-0">
@@ -391,11 +391,11 @@ $medtech = $medtech->posts;
       <aside class="col-lg-4 sidebar sidebar--1 sidebar--right">
 
          <!-- Widget Ad 300 -->
-         <aside class="widget widget_media_image">
+         <!--<aside class="widget widget_media_image">
             <a href="#">
                <img src="<?= get_template_directory_uri() ?>/img/content/placeholder_336.jpg" alt="">
             </a>
-         </aside> <!-- end widget ad 300 -->
+         </aside> -->
 
          <?= get_template_part("template-parts/sidebar/top-categories"); ?>
 
