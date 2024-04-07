@@ -14,6 +14,11 @@ $latest = new WP_Query([
 ]);
 $latest = $latest->posts;
 
+$promoted_post = get_post(45551);
+if ($promoted_post) {
+   array_unshift($latest, $promoted_post);
+}
+
 $technology_all = new WP_Query([
    'cat' => [8, 582, 1621, 581, 559, 558, 2058, 557, 509, 883, 846, 1612],
    'posts_per_page' => 4,
@@ -116,7 +121,7 @@ $medtech = $medtech->posts;
                      </div>
 
                      <div class="entry__body post-list__body card__body">
-                        <h2 class="entry__title">
+                        <h2 class="entry__title two-lines">
                            <a href="<?= get_permalink($late->ID) ?>"><?= print_title($late) ?></a>
                         </h2>
                         <ul class="entry__meta">
@@ -153,7 +158,7 @@ $medtech = $medtech->posts;
                      </div>
 
                      <div class="entry__body card__body">
-                        <h2 class="entry__title">
+                        <h2 class="entry__title two-lines">
                            <a href="<?= get_permalink($latest[3]->ID) ?>"><?= print_title($latest[3]) ?></a>
                         </h2>
                         <ul class="entry__meta">
