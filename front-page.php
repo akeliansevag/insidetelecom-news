@@ -14,10 +14,10 @@ $latest = new WP_Query([
 ]);
 $latest = $latest->posts;
 
-/*$promoted_post = get_post(45551);
+$promoted_post = get_post(45551);
 if ($promoted_post) {
    array_unshift($latest, $promoted_post);
-}*/
+}
 
 $technology_all = new WP_Query([
    'cat' => [8, 582, 1621, 581, 559, 558, 2058, 557, 509, 883, 846, 1612],
