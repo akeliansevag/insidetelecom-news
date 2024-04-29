@@ -14,6 +14,11 @@ $latest = new WP_Query([
 ]);
 $latest = $latest->posts;
 
+$promoted_post_2 = get_post(45958);
+if ($promoted_post_2) {
+   array_unshift($latest, $promoted_post_2);
+}
+
 $promoted_post = get_post(45551);
 if ($promoted_post) {
    array_unshift($latest, $promoted_post);
