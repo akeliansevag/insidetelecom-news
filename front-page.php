@@ -345,7 +345,7 @@ $medtech = $medtech->posts;
    </section> <!-- end posts from categories -->
 
    <!-- Video posts -->
-   <section class="section mb-24">
+   <!-- <section class="section mb-24">
       <div class="title-wrap title-wrap--line">
          <h3 class="section-title">Events</h3>
          <a href="/events" class="all-posts-url">View All</a>
@@ -364,7 +364,7 @@ $medtech = $medtech->posts;
          <?php endforeach; ?>
 
       </div>
-   </section> <!-- end video posts -->
+   </section> end video posts -->
 
 
    <!-- Content Secondary -->
