@@ -32,7 +32,7 @@ if ($args['category_id']) {
                                 <li class="entry__meta-author">
                                     <?php $author = get_the_author_meta('display_name', $posts[0]->post_author); ?>
                                     <span>by</span>
-                                    <a href="<?= get_author_posts_url($posts[0]) ?>"><?= $author ?></a>
+                                    <a href="<?= get_author_posts_url($posts[0]->post_author) ?>"><?= $author ?></a>
                                 </li>
                                 <li class="entry__meta-date">
                                     <?php
