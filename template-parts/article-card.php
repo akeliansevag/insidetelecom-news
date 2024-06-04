@@ -26,7 +26,7 @@ if ($args['post']) {
                     <li class="entry__meta-author">
                         <?php $author = get_the_author_meta('display_name', $post->post_author); ?>
                         <span>by</span>
-                        <a href="<?= get_author_posts_url($post) ?>"><?= $author ?></a>
+                        <a href="<?= get_author_posts_url($post->post_author) ?>"><?= $author ?></a>
                     </li>
                     <li class="entry__meta-date">
                         <?php
