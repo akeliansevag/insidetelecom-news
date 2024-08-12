@@ -8,7 +8,7 @@ if ($args['post']) {
     <article class="entry card">
         <div class="entry__img-holder card__img-holder">
             <a href="<?= get_permalink($post->ID) ?>">
-                <div class="thumb-container thumb-70">
+                <div class="thumb-container thumb-169">
                     <img data-src="<?= get_the_post_thumbnail_url($post->ID); ?>" src="<?= get_the_post_thumbnail_url($post->ID); ?>" class="entry__img it-cover lazyload" alt="" />
                 </div>
             </a>
