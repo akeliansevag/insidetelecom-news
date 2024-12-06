@@ -15,20 +15,20 @@ $latest = new WP_Query([
 $latest = $latest->posts;
 
 
-$promoted_post = get_post(48036);
-if ($promoted_post) {
-   array_unshift($latest, $promoted_post);
-}
+// $promoted_post = get_post(48036);
+// if ($promoted_post) {
+//    array_unshift($latest, $promoted_post);
+// }
 
-$promoted_post_2 = get_post(48103);
-if ($promoted_post_2) {
-   array_unshift($latest, $promoted_post_2);
-}
+// $promoted_post_2 = get_post(48103);
+// if ($promoted_post_2) {
+//    array_unshift($latest, $promoted_post_2);
+// }
 
-$promoted_post_3 = get_post(50549);
-if ($promoted_post_3) {
-   array_unshift($latest, $promoted_post_3);
-}
+// $promoted_post_3 = get_post(50549);
+// if ($promoted_post_3) {
+//    array_unshift($latest, $promoted_post_3);
+// }
 
 
 $technology_all = new WP_Query([
