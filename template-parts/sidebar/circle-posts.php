@@ -5,7 +5,7 @@ if ($args['posts']) {
     $posts = $args['posts'];
 } else {
     $latest = new WP_Query([
-        'category__not_in' => 177,
+        //'category__not_in' => 177,
         'posts_per_page' => 4,
     ]);
     $posts = $latest->posts;
