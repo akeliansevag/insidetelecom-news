@@ -9,7 +9,7 @@ $daily_news = $daily_news->posts;
 
 
 $latest = new WP_Query([
-   'category__not_in' => 177,
+   //'category__not_in' => 177,
    'posts_per_page' => 4,
 ]);
 $latest = $latest->posts;
