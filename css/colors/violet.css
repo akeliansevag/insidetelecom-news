@@ -31,7 +31,7 @@
 .video-playlist__list-item:hover .video-playlist__list-item-title,
 .comment-reply:hover,
 .entry-navigation a:hover {
-  color: #3E3EDD;
+  color: #b39d48;
 }
 
 .btn-color,
@@ -55,14 +55,15 @@
 .style-videos .nav__dropdown.active,
 .final-review__score-number,
 .final-review__text-holder:before {
-  background-color: #3E3EDD;
+  background-color: #b39d48;
 }
 
 .widget_tag_cloud a:hover,
 .entry__tags a:hover {
-  background-color: #3E3EDD !important;
+  background-color: #b39d48 !important;
 }
 
-input:focus, textarea:focus {
-  border-color: #3E3EDD;
+input:focus,
+textarea:focus {
+  border-color: #b39d48;
 }

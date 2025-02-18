@@ -11,8 +11,21 @@ $youtube_video_url = get_field("youtube_video_url");
 $next_post = get_next_post(true);
 $prev_post = get_previous_post(true);
 ?>
+<div class="dark-bg">
+    <div class="container">
+        <div class="content-box dark">
+            <div class="single-post__entry-header entry__header">
+                <a class="entry__meta-category entry__meta-category--label" href="<?= get_category_link($cat[0]) ?>"><?= $cat[0]->name; ?></a>
+                <h1 class="single-post__entry-title">
+                    <?= $post->post_title; ?>
+                </h1>
+            </div> <!-- end entry header -->
+        </div>
+    </div>
 
-<div class="main-container container mt-5" id="main-container">
+</div>
+
+<div class="main-container container mt-3" id="main-container">
 
     <!-- Content -->
     <div class="row">
@@ -23,33 +36,16 @@ $prev_post = get_previous_post(true);
 
                 <!-- standard post -->
                 <article class="entry mb-0">
+                    <div class="entry__meta-holder">
+                        <ul class="entry__meta mb-3">
+                            <li class="entry__meta-author">
+                                <span>by</span>
+                                <a href="<?= get_author_posts_url($post->post_author) ?>"><?= $author; ?></a> - <?= date("F d, Y", strtotime($post->post_date)); ?></span><br />
 
-                    <div class="single-post__entry-header entry__header">
-                        <a class="entry__meta-category entry__meta-category--label" href="<?= get_category_link($cat[0]) ?>"><?= $cat[0]->name; ?></a>
-                        <h1 class="single-post__entry-title">
-                            <?= $post->post_title; ?>
-                        </h1>
-
-                        <div class="entry__meta-holder">
-                            <ul class="entry__meta">
-                                <li class="entry__meta-author">
-                                    <span>by</span>
-                                    <a href="<?= get_author_posts_url($post->post_author) ?>"><?= $author; ?></a>
-                                </li>
-                                <li class="entry__meta-date">
-                                    <?= date("F d, Y", strtotime($post->post_date)); ?>
-                                </li>
-                            </ul>
-
-                            <ul class="entry__meta">
-                                <li class="entry__meta-views">
-                                    <span>Reading time: <?= get_reading_time($post) ?></span>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div> <!-- end entry header -->
-
+                                <span>Reading time: <?= get_reading_time($post) ?></span>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="entry__img-holder">
                         <?= get_the_post_thumbnail($post->ID, 'large', ['class' => 'entry__img']); ?>
                         <?= get_the_post_thumbnail_caption($post->ID); ?>
