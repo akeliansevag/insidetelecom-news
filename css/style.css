@@ -4640,7 +4640,7 @@ input.nav__search-mobile-input:-ms-input-placeholder {
   color: #ffffff;
 }
 .sidenav__menu--is-open > a:hover {
-  color: #000000;
+  color: #ffffff;
 }
 
 .sidenav__menu--is-open > .sidenav__menu-toggle {
