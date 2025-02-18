@@ -4646,10 +4646,10 @@ input.nav__search-mobile-input:-ms-input-placeholder {
 .sidenav__menu--is-open > .sidenav__menu-toggle {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
-  color: #54555e;
+  color: #ffffff;
 }
 .sidenav__menu--is-open > .sidenav__menu-toggle:hover {
-  color: #54555e;
+  color: #ffffff;
 }
 
 .sidenav__menu-url {
