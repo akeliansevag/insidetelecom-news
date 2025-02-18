@@ -133,7 +133,7 @@ $medtech = $medtech->posts;
                      </div>
 
                      <div class="entry__body post-list__body card__body">
-                        <h2 class="entry__title two-lines">
+                        <h2 class="entry__title three-lines">
                            <a href="<?= get_permalink($late->ID) ?>"><?= print_title($late) ?></a>
                         </h2>
                         <ul class="entry__meta">
