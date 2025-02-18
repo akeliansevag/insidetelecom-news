@@ -2559,7 +2559,7 @@ img.mfp-img {
   height: 33.333%;
 }
 .featured-posts-grid__item--sm .entry__title {
-  font-size: 16px;
+  font-size: 22px;
 }
 @media only screen and (min-width: 992px) {
   .featured-posts-grid__item--sm:first-child .post-list__img-holder,
@@ -3595,7 +3595,7 @@ img.mfp-img {
 }
 
 .single-post__entry-title {
-  font-size: 36px;
+  font-size: 40px;
   margin-top: 12px;
   margin-bottom: 5px;
 }
