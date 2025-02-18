@@ -21,7 +21,7 @@ $menuitems = wp_get_nav_menu_items($menu_name);
                 <!-- Logo -->
                 <a href="<?= home_url() ?>" class="logo">
                     <!-- <img class="logo__img" src="<?= get_template_directory_uri() ?>/img/logo_default.png" alt="logo"> -->
-                    <svg width="200" height="" viewBox="0 0 297 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="200" viewBox="0 0 297 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 37.4011L3.27197 12.6445H11.8566L8.58464 37.4011H0Z" fill="white" />
                         <path d="M12.4266 5.18481C12.4266 7.95084 10.2206 10.3696 7.69539 10.3696C5.17016 10.3696 2.65063 7.95084 2.65063 5.18481C2.65063 2.41878 4.85665 0 7.69539 0C10.5341 0 12.4266 2.41279 12.4266 5.18481Z" fill="white" />
                         <path d="M73.568 5.18481C73.568 7.95084 71.362 10.3696 68.8367 10.3696C66.3115 10.3696 63.792 7.95084 63.792 5.18481C63.792 2.41878 65.998 0 68.8367 0C71.6755 0 73.568 2.41279 73.568 5.18481Z" fill="white" />

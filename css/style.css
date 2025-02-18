@@ -4815,8 +4815,6 @@ input.nav__search-mobile-input:-ms-input-placeholder {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    height: 48px;
-    line-height: 48px;
     text-align: center;
   }
 }
