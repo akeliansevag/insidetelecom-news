@@ -42,7 +42,8 @@ $prev_post = get_previous_post(true);
                                 <span>by</span>
                                 <a href="<?= get_author_posts_url($post->post_author) ?>"><?= $author; ?></a> - <?= date("F d, Y", strtotime($post->post_date)); ?></span><br />
 
-                                <span>Reading time: <?= get_reading_time($post) ?></span>
+                                <span>Reading time: <?= get_reading_time($post) ?></span><br />
+                                <span><?= do_shortcode('[post-views]') ?></span>
                             </li>
                         </ul>
                     </div>
