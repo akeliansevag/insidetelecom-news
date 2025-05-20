@@ -163,6 +163,10 @@ blockquote p {
   font-size: 28px;
 }
 
+.wp-block-list li{
+  margin-bottom:15px;
+}
+
 @media only screen and (max-width: 767px) {
   .caption-picture {
     font-size: 10px;
