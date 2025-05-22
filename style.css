@@ -167,6 +167,10 @@ blockquote p {
   margin-bottom:15px;
 }
 
+.border{
+  border: 1px solid black;
+}
+
 @media only screen and (max-width: 767px) {
   .caption-picture {
     font-size: 10px;
