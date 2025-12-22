@@ -6,6 +6,14 @@ $time = human_time_diff(get_the_time('U', $post->ID), current_time('timestamp'))
 $author = get_the_author_meta('display_name', $post->post_author);
 
 $related = get_posts(array('category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID)));
+
+$related_posts = get_field('related');
+if (!empty($related_posts)) {
+    $related = array_merge($related, $related_posts);
+}
+
+
+
 $youtube_video_url = get_field("youtube_video_url");
 
 $next_post = get_next_post(true);
