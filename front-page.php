@@ -426,7 +426,7 @@ $medtech = $medtech->posts;
          <?php foreach ($media_partners as $key => $mp) : ?>
             <?php if ($key > 9) break; ?>
             <div class="home-media-partner">
-               <img class="white-element" src="<?= $mp['image']['sizes']['medium-thumb'] ?>" alt="">
+               <a href="<?= $mp['link'] ?>" target="_blank"><img class="white-element" src="<?= $mp['image']['sizes']['medium-thumb'] ?>" alt=""></a>
             </div>
          <?php endforeach; ?>
 
