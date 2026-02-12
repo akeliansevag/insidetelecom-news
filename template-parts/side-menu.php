@@ -42,5 +42,8 @@
         <a class="social social-linkedin" href="https://www.linkedin.com/company/inside-telecom/" target="_blank" aria-label="linkedin">
             <i class="ui-linkedin"></i>
         </a>
+        <a class="social social-whatsapp" href="https://whatsapp.com/channel/0029Vb7OJuOGzzKZ2ZyDH60G" target="_blank" aria-label="whatsapp">
+            <i class="ui-whatsapp"></i>
+        </a>
     </div>
 </header> <!-- end sidenav -->

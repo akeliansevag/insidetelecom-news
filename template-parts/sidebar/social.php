@@ -21,10 +21,14 @@
                  <a class="social social-instagram" href="https://www.instagram.com/insidetelecom.news/?hl=en" title="instagram" target="_blank" aria-label="instagram">
                      <i class="ui-instagram"></i>
                      <span class="social__text">Instagram</span>
-                 </a><!--
-                  --><a class="social social-linkedin" href="https://www.linkedin.com/company/inside-telecom/" title="rss" target="_blank" aria-label="rss">
+                 </a>
+                 <a class="social social-linkedin" href="https://www.linkedin.com/company/inside-telecom/" title="rss" target="_blank" aria-label="rss">
                      <i class="ui-linkedin"></i>
                      <span class="social__text">LinkedIn</span>
+                 </a>
+                 <a class="social social-whatsapp" href="https://whatsapp.com/channel/0029Vb7OJuOGzzKZ2ZyDH60G" title="rss" target="_blank" aria-label="rss">
+                     <i class="ui-whatsapp"></i>
+                     <span class="social__text">whatsapp</span>
                  </a>
              </div>
          </div>
