@@ -127,11 +127,34 @@
       </div> <!-- end container -->
 </footer> <!-- end footer -->
 
-<div id="back-to-top">
+<!-- <div id="back-to-top">
       <a href="#top" aria-label="Go to top"><i class="ui-arrow-up"></i></a>
-</div>
+</div> -->
 
 </main> <!-- end main-wrapper -->
+
+
+
+<!-- Sticky WhatsApp Channel Button -->
+
+<a
+      href="https://whatsapp.com/channel/0029Vb7OJuOGzzKZ2ZyDH60G"
+      class="sticky-whatsapp-channel"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Join our WhatsApp Channel">
+
+      <span class="sticky-whatsapp-channel__label">
+            Join our WhatsApp Channel
+      </span>
+      <span class="sticky-whatsapp-channel__icon">
+
+            <img
+                  src="<?= get_template_directory_uri(); ?>/img/whatsapp-channel.svg"
+                  alt="WhatsApp Channel">
+      </span>
+
+</a>
 <?php wp_footer(); ?>
 </body>
 

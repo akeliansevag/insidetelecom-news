@@ -186,3 +186,97 @@ footer .socials--large a {
     font-size: 10px;
   }
 }
+
+.sticky-whatsapp-channel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.sticky-whatsapp-channel__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.sticky-whatsapp-channel__icon img {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+.sticky-whatsapp-channel__label {
+  background-color: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 11px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-whatsapp-channel:hover .sticky-whatsapp-channel__label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.sticky-whatsapp-channel:hover .sticky-whatsapp-channel__icon {
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .sticky-whatsapp-channel {
+    right: 16px;
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .sticky-whatsapp-channel__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .sticky-whatsapp-channel__icon img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .sticky-whatsapp-channel__label {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .sticky-whatsapp-channel__label {
+    font-size: 0;
+  }
+
+  .sticky-whatsapp-channel__label::after {
+    content: "Join";
+    font-size: 13px;
+  }
+}
